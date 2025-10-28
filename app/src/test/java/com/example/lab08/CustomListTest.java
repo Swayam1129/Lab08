@@ -17,4 +17,17 @@ public class CustomListTest {
         assertFalse(cityList.hasCity(notInList));
     }
 
+    @Test
+    public void testDeleteCity() {
+        CustomList cityList = new CustomList();
+        City city = new City("Edmonton", "AB");
+        cityList.addCity(city);
+
+        // Delete the city
+        cityList.deleteCity(city);
+
+        // Now the city should not exist
+        assertFalse(cityList.hasCity(city));
+    }
+
 }
